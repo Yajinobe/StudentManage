@@ -16,19 +16,15 @@ public class SubjectController {
 	@Autowired
 	private SubjectService subjectService;
 
-	@RequestMapping("/subjectsave.do")
+	@RequestMapping("/saveSubject.do")
 	public void saveSubject(HttpServletResponse resp, Subject subject) throws IOException{
 		subjectService.saveSubject(subject);
-		resp.setContentType("text/html;charset=utf-8");
-		resp.getWriter().print("1");
 	}
 	
 
-	@RequestMapping("/subjectupdate.do")
+	@RequestMapping("/updateSubject.do")
 	public void updateGrade(HttpServletResponse resp, Subject subject) throws IOException{
 		subjectService.updateSubject(subject);
-		resp.setContentType("text/html;charset=utf-8");
-		resp.getWriter().print("1");
 	}
 
 }
