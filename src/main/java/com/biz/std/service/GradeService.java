@@ -17,16 +17,6 @@ public class GradeService {
 	@Autowired
 	private GradeRepository gradeRepository;
 
-	public Pagination findAllGrades(int page, int rows) {
-		Sort.Order order = new Sort.Order(Sort.Direction.ASC,"id");
-		Sort sort = new Sort(order);
-		
-		Pageable pageable = new PageRequest(page-1,rows,sort);
-		Page<Grade> list = gradeRepository.findAll(pageable);
-		Pagination pagination = new Pagination(list.getTotalElements(),list.getNumber()+1,list.getContent());
-		return pagination;
-	}
-
 	@Transactional
 	public void saveGrade(Grade grade) {
 		gradeRepository.save(grade);
