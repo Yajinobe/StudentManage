@@ -16,11 +16,9 @@ public class GradeController {
 	@Autowired
 	private GradeService gradeService;
 
-	@RequestMapping("/gradesave.do")
+	@RequestMapping("/save.do")
 	public void saveGrade(HttpServletResponse resp, Grade grade) throws IOException{
 		gradeService.saveGrade(grade);
-		resp.setContentType("text/html;charset=utf-8");
-		resp.getWriter().print("1");
 	}
 
 }
