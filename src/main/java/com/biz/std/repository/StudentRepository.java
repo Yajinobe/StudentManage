@@ -7,6 +7,4 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface StudentRepository extends JpaRepository<Student,Integer>,JpaSpecificationExecutor<Student> {
 	
-	@Query("select s from Student s where s.number = ?1")
-	public Student findByStudentNumber(String number);
 }
